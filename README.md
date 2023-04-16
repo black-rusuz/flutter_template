@@ -1,16 +1,33 @@
 # flutter_template
 
-Template for Flutter projects
+Шаблон проектов на Flutter
 
-## Getting Started
+<hr>
 
-This project is a starting point for a Flutter application.
+## Запуск
 
-A few resources to get you started if this is your first Flutter project:
+```shell
+flutter pub upgrade
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```shell
+flutter pub get
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```shell
+flutter pub run build_runner build --delete-conflicting-outputs 
+```
+
+<hr>
+
+## Инфо
+
+Ну типа чистая архитектура с поправкой на похуизм.
+
+`/data` — слой данных
+
+`/domain` — слой бизнес-логики
+
+`/presentation` — слой представления
+
+Слоя внедрения зависимостей у меня нет. ~~Он нахуй и не нужен.~~ Зато есть `injection.config.dart`
