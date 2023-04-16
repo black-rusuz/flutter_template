@@ -1,5 +1,6 @@
+# TODO: Название
 name: flutter_template
-description: A new Flutter project.
+description: Шаблон проектов на Flutter
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 environment:
