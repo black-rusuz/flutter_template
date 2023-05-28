@@ -15,8 +15,9 @@ class BasicCard extends StatelessWidget {
   final EdgeInsets margin;
   final EdgeInsets padding;
   final BorderRadius? borderRadius;
+  final Border? border;
   final Color? color;
-  final BoxShadow? shadow;
+  final BoxShadow? customShadow;
   final VoidCallback? onTap;
 
   const BasicCard({
@@ -27,10 +28,16 @@ class BasicCard extends StatelessWidget {
     this.margin = EdgeInsets.zero,
     this.padding = EdgeInsets.zero,
     this.borderRadius,
+    this.border,
     this.color,
-    this.shadow,
+    this.customShadow,
     this.onTap,
   });
+
+  BorderRadius get _borderRadius => borderRadius ?? _defaultRadius;
+
+  List<BoxShadow>? get _shadows =>
+      color == null ? null : [customShadow ?? _defaultShadow];
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +45,16 @@ class BasicCard extends StatelessWidget {
       padding: margin,
       child: InkWell(
         onTap: onTap,
-        borderRadius: borderRadius ?? _defaultRadius,
+        borderRadius: _borderRadius,
         child: Ink(
           width: width,
           height: height,
           padding: padding,
           decoration: BoxDecoration(
             color: color,
-            borderRadius: borderRadius ?? _defaultRadius,
-            boxShadow: [shadow ?? _defaultShadow],
+            border: border,
+            borderRadius: _borderRadius,
+            boxShadow: _shadows,
           ),
           child: child,
         ),
