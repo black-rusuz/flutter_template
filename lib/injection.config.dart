@@ -31,8 +31,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.singleton<_i3.ApiSource>(_i4.BaseDataSource());
     gh.factory<_i5.HomeBloc>(() => _i5.HomeBloc());
-    gh.factory<_i6.Repository>(
-        () => _i7.AppRepository(gh<_i4.BaseDataSource>()));
+    gh.factory<_i6.Repository>(() => _i7.AppRepository(gh<_i3.ApiSource>()));
     return this;
   }
 }

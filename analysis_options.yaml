@@ -2,7 +2,10 @@ include: package:flutter_lints/flutter.yaml
 
 analyzer:
   exclude:
+    - lib/generated
     - lib/injection.config.dart
+  errors:
+    invalid_annotation_target: ignore
 
 linter:
   rules:
