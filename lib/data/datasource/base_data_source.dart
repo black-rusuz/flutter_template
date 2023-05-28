@@ -2,5 +2,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../domain/api_source.dart';
 
-@Singleton(as: ApiSource)
-class BaseDataSource extends ApiSource {}
+@singleton
+class BaseDataSource extends ApiSource {
+  BaseDataSource(super.http);
+}
