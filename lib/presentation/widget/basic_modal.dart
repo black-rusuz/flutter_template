@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const _defaultRadius = BorderRadius.vertical(top: Radius.circular(15));
+
 class BasicModal extends StatelessWidget {
   final EdgeInsets padding;
   final BorderRadius borderRadius;
@@ -27,7 +29,7 @@ class BasicModal extends StatelessWidget {
     double? imageHeight,
     List<double>? sizes,
     EdgeInsets padding = EdgeInsets.zero,
-    BorderRadius borderRadius = BorderRadius.zero,
+    BorderRadius borderRadius = _defaultRadius,
     Color? backgroundColor,
     Color? barrierColor,
   }) {
