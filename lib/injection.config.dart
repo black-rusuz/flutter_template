@@ -9,12 +9,14 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i6;
+import 'package:flutter/material.dart' as _i7;
 import 'package:flutter_template/data/datasource/base_data_source.dart' as _i4;
-import 'package:flutter_template/data/repository.dart' as _i8;
+import 'package:flutter_template/data/repository.dart' as _i9;
 import 'package:flutter_template/domain/api_source.dart' as _i3;
-import 'package:flutter_template/domain/repository.dart' as _i7;
-import 'package:flutter_template/presentation/home/home.dart' as _i5;
+import 'package:flutter_template/domain/repository.dart' as _i8;
+import 'package:flutter_template/presentation/page/home/bloc/home_bloc.dart'
+    as _i5;
+import 'package:flutter_template/presentation/page/home/home.dart' as _i6;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -30,9 +32,10 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     gh.singleton<_i3.ApiSource>(_i4.BaseDataSource());
-    gh.factory<_i5.HomePage>(() => _i5.HomePage(key: gh<_i6.Key>()));
-    gh.factory<_i7.Repository>(
-        () => _i8.AppRepository(gh<_i4.BaseDataSource>()));
+    gh.factory<_i5.HomeBloc>(() => _i5.HomeBloc());
+    gh.factory<_i6.HomePage>(() => _i6.HomePage(key: gh<_i7.Key>()));
+    gh.factory<_i8.Repository>(
+        () => _i9.AppRepository(gh<_i4.BaseDataSource>()));
     return this;
   }
 }
