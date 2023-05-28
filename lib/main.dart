@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import 'injection.dart';
+import 'presentation/app_theme.dart';
 import 'presentation/page/home/home.dart';
 
 class DevHttpOverrides extends HttpOverrides {
@@ -37,32 +38,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // TODO: Название
       title: 'Flutter Template',
-      // TODO: Тема
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: Routes.home,
-      onGenerateRoute: _navigate,
+      theme: AppTheme.get(),
+      initialRoute: AppRoutes.main,
+      onGenerateRoute: AppRoutes.navigate,
     );
   }
+}
 
-  Route _getPage(Widget child) {
+// TODO: Навигация
+class AppRoutes {
+  static const main = '/main';
+
+  static Route getPage(Widget child) {
     return MaterialPageRoute(builder: (_) => child);
   }
 
-  Route? _navigate(RouteSettings settings) {
+  static Route? navigate(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.home:
-        return _getPage(BlocProvider(
+      case AppRoutes.main:
+        return getPage(BlocProvider(
           create: (_) => get<HomeBloc>(),
           child: const HomePage(),
         ));
     }
     return null;
   }
-}
-
-class Routes {
-  // TODO: Навигация
-  static const home = '/home';
 }
