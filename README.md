@@ -30,4 +30,4 @@ flutter pub run build_runner build --delete-conflicting-outputs
 
 `/presentation` — слой представления
 
-Слоя внедрения зависимостей у меня нет. ~~Он нахуй и не нужен.~~ Зато есть `injection.config.dart`
+Слоя внедрения зависимостей у меня нет, ~~он нахуй и не нужен~~. Зато есть `injection.config.dart`
