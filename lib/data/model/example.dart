@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part '../generated/freezed/example.freezed.dart';
-part '../generated/json/example.g.dart';
+part '../../generated/freezed/example.freezed.dart';
+part '../../generated/json/example.g.dart';
 
 @freezed
 class ExampleModel with _$ExampleModel {
