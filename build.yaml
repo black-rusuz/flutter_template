@@ -4,11 +4,11 @@ targets:
       source_gen:combining_builder:
         options:
           build_extensions:
-            '^lib/data/model/{{name}}.dart': 'lib/generated/json/{{name}}.g.dart'
+            '^lib/data/model/{{name}}.dart': 'lib/generated/model/json/{{name}}.g.dart'
       freezed|freezed:
         options:
           build_extensions:
-            '^lib/data/model/{{name}}.dart': 'lib/generated/freezed/{{name}}.freezed.dart'
+            '^lib/data/model/{{name}}.dart': 'lib/generated/model/freezed/{{name}}.freezed.dart'
       json_serializable:
         options:
           explicit_to_json: true
